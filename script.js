@@ -129,20 +129,20 @@ costumerName.addEventListener("input", (e) => {
 
 checkoutBtn.addEventListener("click", () => {
   const isOpen = checkHour();
-  if (!isOpen) {
-    Toastify({
-      text: "A Glacimó está fechada",
-      duration: 3000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #ef4444, #ef4440)",
-      },
-    }).showToast();
-    return;
-  }
+  // if (!isOpen) {
+  //   Toastify({
+  //     text: "A Glacimó está fechada",
+  //     duration: 3000,
+  //     close: true,
+  //     gravity: "top", // `top` or `bottom`
+  //     position: "right", // `left`, `center` or `right`
+  //     stopOnFocus: true, // Prevents dismissing of toast on hover
+  //     style: {
+  //       background: "linear-gradient(to right, #ef4444, #ef4440)",
+  //     },
+  //   }).showToast();
+  //   return;
+  // }
 
   if (cart.length === 0) return;
 
