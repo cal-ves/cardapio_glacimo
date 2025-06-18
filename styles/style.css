@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@layer utilities {
+  .bg-home {
+    background-image: url("../assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+body {
+  background-color: #f6f7f8;
+}
+
+button {
+  cursor: pointer;
+}
