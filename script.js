@@ -11,6 +11,7 @@ const costumerNameWarn = document.getElementById("name-warn");
 const spanItem = document.getElementById("date-span");
 
 let cart = [];
+let total = 0;
 
 // Abrir modal do carrinho
 cartBtn.addEventListener("click", () => {
@@ -60,7 +61,6 @@ function addToCart(name, price) {
 
 function updateCartModal() {
   cartItemsContainer.innerHTML = "";
-  let total = 0;
 
   cart.forEach((item) => {
     const cartItemElement = document.createElement("div");
@@ -154,22 +154,40 @@ checkoutBtn.addEventListener("click", () => {
 
   const cartItems = cart
     .map((item) => {
-      return ` ${item.name}, Quantidade: ${item.quantity}, Preço: ${item.price} |`;
+      return `${item.name}\nQuantidade: ${
+        item.quantity
+      }\nPreço: ${item.price.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })}`;
     })
     .join("");
 
-  console.log(cartItems);
-
-  const message = encodeURIComponent(cartItems);
-  const phone = "+5521972874002";
-
-  window.open(
-    `https://wa.me/${phone}?text=${message} Nome: ${costumerName.value}`,
-    "_blank"
+  console.log(
+    cartItems,
+    "\n",
+    total.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    })
   );
 
-  cart = [];
-  updateCartModal();
+  const message = encodeURIComponent(
+    cartItems,
+    total.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    })
+  );
+  const phone = "+5521972874002";
+
+  // window.open(
+  //   `https://wa.me/${phone}?text=${message} Nome: ${costumerName.value}`,
+  //   "_blank"
+  // );
+
+  // cart = [];
+  // updateCartModal();
 });
 
 function checkHour() {
