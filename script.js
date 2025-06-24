@@ -159,30 +159,21 @@ checkoutBtn.addEventListener("click", () => {
       }\nPreço: ${item.price.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
-      })}`;
+      })}\n`;
     })
     .join("");
 
-  console.log(
-    cartItems,
-    "\n",
-    total.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    })
-  );
-
-  const message = encodeURIComponent(
-    cartItems,
-    total.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    })
-  );
+  const message = encodeURIComponent(cartItems);
   const phone = "+5521972874002";
 
   window.open(
-    `https://wa.me/${phone}?text=${message} Nome: ${costumerName.value}`,
+    `https://wa.me/${phone}?text=${message}\nTotal:${total.toLocaleString(
+      "pt-BR",
+      {
+        style: "currency",
+        currency: "BRL",
+      }
+    )}\nNome: ${costumerName.value}`,
     "_blank"
   );
 
