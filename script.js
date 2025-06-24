@@ -60,6 +60,7 @@ function addToCart(name, price) {
 }
 
 function updateCartModal() {
+  total = 0;
   cartItemsContainer.innerHTML = "";
 
   cart.forEach((item) => {
