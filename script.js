@@ -181,13 +181,13 @@ checkoutBtn.addEventListener("click", () => {
   );
   const phone = "+5521972874002";
 
-  // window.open(
-  //   `https://wa.me/${phone}?text=${message} Nome: ${costumerName.value}`,
-  //   "_blank"
-  // );
+  window.open(
+    `https://wa.me/${phone}?text=${message} Nome: ${costumerName.value}`,
+    "_blank"
+  );
 
-  // cart = [];
-  // updateCartModal();
+  cart = [];
+  updateCartModal();
 });
 
 function checkHour() {
